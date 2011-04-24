@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical">
+	<TextView android:id="@+id/textView1" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="System Volume"
+		android:layout_marginLeft="15px" android:padding="12px"></TextView>
+	<SeekBar android:layout_width="match_parent" android:padding="12px" android:id="@+id/systemVolume"
+		android:layout_marginLeft="15px" android:layout_height="wrap_content"></SeekBar>
+	<TextView android:id="@+id/textView3" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Alarm Volume"
+		android:padding="12px" android:layout_marginLeft="15px"></TextView>
+	<SeekBar android:layout_height="wrap_content"
+		android:layout_marginLeft="15px" android:padding="12px"
+		android:layout_width="match_parent" android:id="@+id/alarmVolume"></SeekBar>
+	<TextView android:layout_height="wrap_content"
+		android:padding="12px" android:layout_marginLeft="15px"
+		android:text="Voice Call Volume" android:layout_width="wrap_content"
+		android:id="@+id/textView4"></TextView>
+	<SeekBar android:layout_height="wrap_content"
+		android:layout_width="match_parent" android:padding="12px"
+		android:id="@+id/voiceVolume" android:layout_marginLeft="15px"></SeekBar>
+	<TextView android:id="@+id/textView5" android:layout_width="wrap_content"
+		android:padding="12px" android:layout_marginLeft="15px"
+		android:layout_height="wrap_content" android:text="Notifications Volume"></TextView>
+	<SeekBar android:layout_height="wrap_content"
+		android:layout_width="match_parent" android:layout_marginLeft="15px"
+		android:padding="12px" android:id="@+id/notificationsVolume"></SeekBar>
+	<TextView android:id="@+id/textView6"
+		android:layout_marginLeft="15px" android:padding="12px"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:text="Ringer Volume"></TextView>
+	<SeekBar android:padding="12px" android:layout_width="match_parent"
+		android:layout_height="wrap_content" android:layout_marginLeft="15px"
+		android:id="@+id/ringerVolume"></SeekBar>
+	<TextView android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_marginLeft="15px"
+		android:text="Media Volume" android:padding="12px" android:id="@+id/textView6"></TextView>
+	<SeekBar android:layout_marginLeft="15px"
+		android:layout_height="wrap_content" android:padding="12px"
+		android:layout_width="match_parent" android:id="@+id/mediaVolume"></SeekBar>
+	<TextView android:layout_height="wrap_content"
+		android:layout_marginLeft="15px"
+		android:text="Hit this button when you wish to save your changes."
+		android:padding="12px" android:layout_width="wrap_content"
+		android:id="@+id/textView2"></TextView>
+	<ToggleButton android:layout_marginLeft="25px"
+		android:layout_height="wrap_content" android:text="ToggleButton"
+		android:id="@+id/toggleButton1"
+		android:layout_width="wrap_content" android:checked="false"></ToggleButton>
+</LinearLayout>
