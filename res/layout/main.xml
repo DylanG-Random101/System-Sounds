@@ -5,16 +5,19 @@
 	<TextView android:id="@+id/textView1" android:layout_width="wrap_content"
 		android:layout_height="wrap_content" android:text="System Volume"
 		android:layout_marginLeft="15px" android:paddingLeft="12px"
-		android:paddingTop="5px"
-		></TextView>
-	<SeekBar android:layout_width="match_parent" android:paddingLeft="12px" android:id="@+id/systemVolume"
-		android:layout_marginLeft="15px" android:layout_height="wrap_content" android:paddingTop="5px"></SeekBar>
+		android:paddingTop="5px"></TextView>
+	<SeekBar android:layout_width="match_parent"
+		android:paddingLeft="12px" android:id="@+id/systemVolume"
+		android:layout_marginLeft="15px" android:layout_height="wrap_content"
+		android:paddingTop="5px"></SeekBar>
 	<TextView android:id="@+id/textView3" android:layout_width="wrap_content"
 		android:layout_height="wrap_content" android:text="Alarm Volume"
-		android:paddingLeft="12px" android:layout_marginLeft="15px" android:paddingTop="5px"></TextView>
+		android:paddingLeft="12px" android:layout_marginLeft="15px"
+		android:paddingTop="5px"></TextView>
 	<SeekBar android:layout_height="wrap_content"
 		android:layout_marginLeft="15px" android:paddingLeft="12px"
-		android:layout_width="match_parent" android:id="@+id/alarmVolume" android:paddingTop="5px"></SeekBar>
+		android:layout_width="match_parent" android:id="@+id/alarmVolume"
+		android:paddingTop="5px"></SeekBar>
 	<TextView android:layout_height="wrap_content"
 		android:paddingLeft="12px" android:layout_marginLeft="15px"
 		android:text="Voice Call Volume" android:layout_width="wrap_content"
@@ -22,9 +25,10 @@
 	<SeekBar android:paddingTop="5px" android:layout_height="wrap_content"
 		android:layout_width="match_parent" android:paddingLeft="12px"
 		android:id="@+id/voiceVolume" android:layout_marginLeft="15px"></SeekBar>
-	<TextView android:paddingTop="5px" android:id="@+id/textView5" android:layout_width="wrap_content"
-		android:paddingLeft="12px" android:layout_marginLeft="15px"
-		android:layout_height="wrap_content" android:text="Notifications Volume"></TextView>
+	<TextView android:paddingTop="5px" android:id="@+id/textView5"
+		android:layout_width="wrap_content" android:paddingLeft="12px"
+		android:layout_marginLeft="15px" android:layout_height="wrap_content"
+		android:text="Notifications Volume"></TextView>
 	<SeekBar android:paddingTop="5px" android:layout_height="wrap_content"
 		android:layout_width="match_parent" android:layout_marginLeft="15px"
 		android:paddingLeft="12px" android:id="@+id/notificationsVolume"></SeekBar>
@@ -32,9 +36,9 @@
 		android:layout_marginLeft="15px" android:paddingLeft="12px"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:text="Ringer Volume"></TextView>
-	<SeekBar android:paddingTop="5px" android:paddingLeft="12px" android:layout_width="match_parent"
-		android:layout_height="wrap_content" android:layout_marginLeft="15px"
-		android:id="@+id/ringerVolume"></SeekBar>
+	<SeekBar android:paddingTop="5px" android:paddingLeft="12px"
+		android:layout_width="match_parent" android:layout_height="wrap_content"
+		android:layout_marginLeft="15px" android:id="@+id/ringerVolume"></SeekBar>
 	<TextView android:paddingTop="5px" android:layout_width="wrap_content"
 		android:layout_height="wrap_content" android:layout_marginLeft="15px"
 		android:text="Media Volume" android:paddingLeft="12px" android:id="@+id/textView6"></TextView>
@@ -46,8 +50,8 @@
 		android:text="Hit this button when you wish to save your changes."
 		android:paddingLeft="12px" android:layout_width="wrap_content"
 		android:id="@+id/textView2"></TextView>
-	<ToggleButton android:paddingTop="5px" android:layout_marginLeft="25px"
-		android:layout_height="wrap_content" android:text="ToggleButton"
-		android:id="@+id/toggleButton1"
+	<ToggleButton android:paddingTop="5px"
+		android:layout_marginLeft="25px" android:layout_height="wrap_content"
+		android:text="ToggleButton" android:id="@+id/toggleButton1"
 		android:layout_width="wrap_content" android:checked="false"></ToggleButton>
 </LinearLayout>
