@@ -6,7 +6,7 @@
 		android:id="@+id/checkedTextView1" android:layout_gravity="center_horizontal"></TextView>
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		android:layout_width="match_parent" android:layout_height="match_parent"
-		android:gravity="center_horizontal" android:orientation="horizontal">
+		android:gravity="center_horizontal" android:orientation="horizontal" android:layout_marginTop="10px">
 		<Button android:text="Loud" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:id="@+id/loudButton" android:layout_height="wrap_content"></Button>
 		<Button android:text="Silent" android:layout_width="wrap_content"
 			android:id="@+id/silentButton" android:layout_height="wrap_content"
