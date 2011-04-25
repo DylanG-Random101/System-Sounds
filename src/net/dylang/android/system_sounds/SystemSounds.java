@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -97,6 +98,7 @@ public class SystemSounds extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		
 		audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		systemBar = (SeekBar) findViewById(R.id.systemVolume);
 		alarmBar = (SeekBar) findViewById(R.id.alarmVolume);
@@ -135,6 +137,22 @@ public class SystemSounds extends Activity {
 		init(notificationsBar);
 		init(ringerBar);
 		init(mediaBar);
+	}
+	
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		switch (keyCode) {    
+		case KeyEvent.KEYCODE_VOLUME_DOWN: {
+			audio.setStreamVolume(AudioManager.STREAM_RING, audio.getStreamVolume(AudioManager.STREAM_RING) - 1, AudioManager.FLAG_PLAY_SOUND);  
+			updateStatusBars();
+			return true;
+		}
+		case KeyEvent.KEYCODE_VOLUME_UP: {
+			audio.setStreamVolume(AudioManager.STREAM_RING, audio.getStreamVolume(AudioManager.STREAM_RING) + 1, AudioManager.FLAG_PLAY_SOUND); 
+			updateStatusBars();
+			return true;
+		}
+		}
+		return super.onKeyDown(keyCode, event);
 	}
 }
 
