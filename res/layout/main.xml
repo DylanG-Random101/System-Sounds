@@ -8,6 +8,7 @@
 		android:paddingTop="5px"></TextView>
 	<SeekBar android:layout_width="match_parent"
 		android:paddingLeft="12px" android:id="@+id/systemVolume"
+		android:layout_marginRight="15px" android:paddingRight="12px"
 		android:layout_marginLeft="15px" android:layout_height="wrap_content"
 		android:paddingTop="5px"></SeekBar>
 	<TextView android:id="@+id/textView3" android:layout_width="wrap_content"
@@ -17,6 +18,7 @@
 	<SeekBar android:layout_height="wrap_content"
 		android:layout_marginLeft="15px" android:paddingLeft="12px"
 		android:layout_width="match_parent" android:id="@+id/alarmVolume"
+		android:layout_marginRight="15px" android:paddingRight="12px"
 		android:paddingTop="5px"></SeekBar>
 	<TextView android:layout_height="wrap_content"
 		android:paddingLeft="12px" android:layout_marginLeft="15px"
@@ -24,6 +26,7 @@
 		android:id="@+id/textView4" android:paddingTop="5px"></TextView>
 	<SeekBar android:paddingTop="5px" android:layout_height="wrap_content"
 		android:layout_width="match_parent" android:paddingLeft="12px"
+		android:layout_marginRight="15px" android:paddingRight="12px"
 		android:id="@+id/voiceVolume" android:layout_marginLeft="15px"></SeekBar>
 	<TextView android:paddingTop="5px" android:id="@+id/textView5"
 		android:layout_width="wrap_content" android:paddingLeft="12px"
@@ -31,19 +34,22 @@
 		android:text="Notifications Volume"></TextView>
 	<SeekBar android:paddingTop="5px" android:layout_height="wrap_content"
 		android:layout_width="match_parent" android:layout_marginLeft="15px"
+		android:layout_marginRight="15px" android:paddingRight="12px"
 		android:paddingLeft="12px" android:id="@+id/notificationsVolume"></SeekBar>
 	<TextView android:paddingTop="5px" android:id="@+id/textView6"
 		android:layout_marginLeft="15px" android:paddingLeft="12px"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:text="Ringer Volume"></TextView>
 	<SeekBar android:paddingTop="5px" android:paddingLeft="12px"
-		android:layout_width="match_parent" android:layout_height="wrap_content"
+		android:layout_width="match_parent" android:layout_marginRight="15px"
+		android:paddingRight="12px" android:layout_height="wrap_content"
 		android:layout_marginLeft="15px" android:id="@+id/ringerVolume"></SeekBar>
 	<TextView android:paddingTop="5px" android:layout_width="wrap_content"
 		android:layout_height="wrap_content" android:layout_marginLeft="15px"
 		android:text="Media Volume" android:paddingLeft="12px" android:id="@+id/textView6"></TextView>
 	<SeekBar android:paddingTop="5px" android:layout_marginLeft="15px"
 		android:layout_height="wrap_content" android:paddingLeft="12px"
+		android:layout_marginRight="15px" android:paddingRight="12px"
 		android:layout_width="match_parent" android:id="@+id/mediaVolume"></SeekBar>
 	<TextView android:paddingTop="5px" android:layout_height="wrap_content"
 		android:layout_marginLeft="15px"
