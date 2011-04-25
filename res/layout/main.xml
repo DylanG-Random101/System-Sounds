@@ -52,12 +52,15 @@
 		android:layout_marginRight="15px" android:paddingRight="12px"
 		android:layout_width="match_parent" android:id="@+id/mediaVolume"></SeekBar>
 	<TextView android:paddingTop="5px" android:layout_height="wrap_content"
-		android:layout_marginLeft="15px"
+		android:layout_marginLeft="15px" android:paddingBottom="5px"
 		android:text="Hit this button when you wish to save your changes."
 		android:paddingLeft="12px" android:layout_width="wrap_content"
 		android:id="@+id/textView2"></TextView>
-	<ToggleButton android:paddingTop="5px"
+	<ToggleButton android:paddingTop="10px"
 		android:layout_marginLeft="25px" android:layout_height="wrap_content"
 		android:text="ToggleButton" android:id="@+id/toggleButton1"
 		android:layout_width="wrap_content" android:checked="false"></ToggleButton>
+	<Button android:text="Profiles" android:id="@+id/profileButton"
+		android:layout_gravity="center" android:layout_width="wrap_content"
+		android:layout_height="wrap_content"></Button>
 </LinearLayout>

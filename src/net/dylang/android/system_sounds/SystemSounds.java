@@ -2,9 +2,13 @@ package net.dylang.android.system_sounds;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.SeekBar;
@@ -14,21 +18,34 @@ import android.widget.ToggleButton;
 
 public class SystemSounds extends Activity {
 	/** Called when the activity is first created. */
-	int systemVolume = 0;
-	int alarmVolume = 0;
-	int voiceVolume = 0;
-	int notificationsVolume = 0;
-	int ringerVolume = 0;
-	int mediaVolume = 0;
-	AudioManager audio;
-	SeekBar systemBar;
-	SeekBar alarmBar;
-	SeekBar voiceBar;
-	SeekBar notificationsBar;
-	SeekBar ringerBar;
-	SeekBar mediaBar;
+	static int systemVolume = 0;
+	static int alarmVolume = 0;
+	static int voiceVolume = 0;
+	static int notificationsVolume = 0;
+	static int ringerVolume = 0;
+	static int mediaVolume = 0;
+	static AudioManager audio;
+	static SeekBar systemBar;
+	static SeekBar alarmBar;
+	static SeekBar voiceBar;
+	static SeekBar notificationsBar;
+	static SeekBar ringerBar;
+	static SeekBar mediaBar;
 
-	public void updateStatusBars() {
+	public static void setAllStreamVolume(int volume) {
+		audio.setStreamVolume(AudioManager.STREAM_SYSTEM, volume, AudioManager.FLAG_PLAY_SOUND);	
+		audio.setStreamVolume(AudioManager.STREAM_ALARM, volume, AudioManager.FLAG_PLAY_SOUND);	
+		audio.setStreamVolume(AudioManager.STREAM_VOICE_CALL, volume, AudioManager.FLAG_PLAY_SOUND);	
+		audio.setStreamVolume(AudioManager.STREAM_NOTIFICATION, volume, AudioManager.FLAG_PLAY_SOUND);	
+		audio.setStreamVolume(AudioManager.STREAM_RING, volume, AudioManager.FLAG_PLAY_SOUND);
+		audio.setStreamVolume(AudioManager.STREAM_MUSIC, volume, AudioManager.FLAG_PLAY_SOUND);
+	}
+
+	public static void setIndividualStreamVolume(int stream, int volume) {
+		audio.setStreamVolume(stream, volume, AudioManager.FLAG_PLAY_SOUND);
+	}
+
+	public static void updateStatusBars() {
 		systemBar.setMax(audio.getStreamMaxVolume(AudioManager.STREAM_SYSTEM));
 		systemBar.setProgress(audio.getStreamVolume(AudioManager.STREAM_SYSTEM));
 		alarmBar.setMax(audio.getStreamMaxVolume(AudioManager.STREAM_ALARM));
@@ -43,7 +60,7 @@ public class SystemSounds extends Activity {
 		mediaBar.setProgress(audio.getStreamVolume(AudioManager.STREAM_MUSIC));
 	}
 
-	public void saveVolumes() {
+	public static void saveVolumes() {
 		audio.setStreamVolume(AudioManager.STREAM_SYSTEM, systemVolume, AudioManager.FLAG_PLAY_SOUND);	
 		audio.setStreamVolume(AudioManager.STREAM_ALARM, alarmVolume, AudioManager.FLAG_PLAY_SOUND);	
 		audio.setStreamVolume(AudioManager.STREAM_VOICE_CALL, voiceVolume, AudioManager.FLAG_PLAY_SOUND);	
@@ -51,7 +68,7 @@ public class SystemSounds extends Activity {
 		audio.setStreamVolume(AudioManager.STREAM_RING, ringerVolume, AudioManager.FLAG_PLAY_SOUND);
 		audio.setStreamVolume(AudioManager.STREAM_MUSIC, mediaVolume, AudioManager.FLAG_PLAY_SOUND);	
 	}
-	
+
 	public void init(final SeekBar myBar) {
 		myBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 			@Override
@@ -88,6 +105,7 @@ public class SystemSounds extends Activity {
 		ringerBar = (SeekBar) findViewById(R.id.ringerVolume);
 		mediaBar = (SeekBar) findViewById(R.id.mediaVolume);
 		final ToggleButton toggle = (ToggleButton) findViewById(R.id.toggleButton1);
+		final Button button = (Button) findViewById(R.id.profileButton);
 
 		updateStatusBars();
 
@@ -101,7 +119,16 @@ public class SystemSounds extends Activity {
 				}
 			}
 		});
-		
+
+		button.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				final Intent startResultsActivity = new Intent(SystemSounds.this, ProfilesPage.class);
+				SystemSounds.this.startActivity(startResultsActivity);
+			}
+		});
+
 		init(systemBar);
 		init(alarmBar);
 		init(voiceBar);
