@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical">
+	<TextView android:id="@+id/textView1" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="System Volume (New Profile)"
+		android:layout_marginLeft="15px" android:paddingLeft="12px"></TextView>
+	<SeekBar android:layout_width="match_parent"
+		android:paddingLeft="12px" android:id="@+id/systemVolume1"
+		android:layout_marginRight="15px" android:paddingRight="12px"
+		android:layout_marginLeft="15px" android:layout_height="wrap_content"></SeekBar>
+	<TextView android:id="@+id/textView3" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Alarm Volume (New Profile)"
+		android:paddingLeft="12px" android:layout_marginLeft="15px"></TextView>
+	<SeekBar android:layout_height="wrap_content"
+		android:layout_marginLeft="15px" android:paddingLeft="12px"
+		android:layout_width="match_parent" android:id="@+id/alarmVolume1"
+		android:layout_marginRight="15px" android:paddingRight="12px"></SeekBar>
+	<TextView android:layout_height="wrap_content"
+		android:paddingLeft="12px" android:layout_marginLeft="15px"
+		android:text="Voice Call Volume (New Profile)" android:layout_width="wrap_content"
+		android:id="@+id/textView4"></TextView>
+	<SeekBar android:layout_height="wrap_content"
+		android:layout_width="match_parent" android:paddingLeft="12px"
+		android:layout_marginRight="15px" android:paddingRight="12px"
+		android:id="@+id/voiceVolume1" android:layout_marginLeft="15px"></SeekBar>
+	<TextView android:id="@+id/textView5" android:layout_width="wrap_content"
+		android:paddingLeft="12px" android:layout_marginLeft="15px"
+		android:layout_height="wrap_content" android:text="Notifications Volume (New Profile)"></TextView>
+	<SeekBar android:layout_height="wrap_content"
+		android:layout_width="match_parent" android:layout_marginLeft="15px"
+		android:layout_marginRight="15px" android:paddingRight="12px"
+		android:paddingLeft="12px" android:id="@+id/notificationsVolume1"></SeekBar>
+	<TextView android:id="@+id/textView6"
+		android:layout_marginLeft="15px" android:paddingLeft="12px"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:text="Ringer Volume (New Profile)"></TextView>
+	<SeekBar android:paddingLeft="12px" android:layout_width="match_parent"
+		android:layout_marginRight="15px" android:paddingRight="12px"
+		android:layout_height="wrap_content" android:layout_marginLeft="15px"
+		android:id="@+id/ringerVolume1"></SeekBar>
+	<TextView android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_marginLeft="15px"
+		android:text="Media Volume (New Profile)" android:paddingLeft="12px"
+		android:id="@+id/textView6"></TextView>
+	<SeekBar android:layout_marginLeft="15px"
+		android:layout_height="wrap_content" android:paddingLeft="12px"
+		android:layout_marginRight="15px" android:paddingRight="12px"
+		android:layout_width="match_parent" android:id="@+id/mediaVolume1"></SeekBar>
+	<EditText android:layout_width="match_parent"
+		android:layout_marginRight="25px" android:layout_marginLeft="25px"
+		android:paddingLeft="25px" android:paddingRight="25px"
+		android:layout_height="wrap_content" android:id="@+id/profileName"
+		android:text="New Profile Name"></EditText>
+	<Button android:layout_height="wrap_content"
+		android:layout_width="match_parent" android:layout_marginLeft="25px"
+		android:layout_marginRight="25px" android:paddingRight="22px"
+		android:paddingLeft="25px" android:id="@+id/submitButton"
+		android:text="Create Profile"></Button>
+</LinearLayout>

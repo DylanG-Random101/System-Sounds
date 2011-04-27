@@ -1,5 +1,11 @@
 package net.dylang.android.system_sounds;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Properties;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +17,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
@@ -32,6 +39,51 @@ public class SystemSounds extends Activity {
 	static SeekBar notificationsBar;
 	static SeekBar ringerBar;
 	static SeekBar mediaBar;
+	static String profileNames;
+	static String message;
+	static LinearLayout layout;
+	static boolean madeProperties = false;
+	static Properties prop = new Properties();
+
+	public static String makeString(String[] split, int startingIndex) 
+	{
+		message = "";
+		for (; startingIndex < split.length; startingIndex++) 
+		{
+			if (startingIndex == 1)
+				message += "" + split[startingIndex];
+			else
+				message += " " + split[startingIndex];
+		}
+		return message;
+	}
+	
+	public void createProperty() {
+		try {
+			/*
+			 * Set default config values
+			 */
+			prop.setProperty("profile-names", "");
+
+			File file = new File(getFilesDir(), "profiles.properties");
+			if(!file.exists()) {
+				file.createNewFile(); 
+				prop.store(new FileOutputStream("profiles.properties"), null);
+			}
+			/*
+			 * Load the config values
+			 */
+			prop.load(new FileInputStream("profiles.properties"));
+			/*
+			 * Set the config values with the loaded values (or default, if not found)
+			 */
+			profileNames = prop.getProperty("profile-names", "");
+			/*
+			 * Store the config file
+			 */
+			prop.store(new FileOutputStream("profiles.properties"), null);
+		} catch (IOException ioe) { ioe.printStackTrace(); } 
+	}
 
 	public static void setAllStreamVolume(int volume) {
 		audio.setStreamVolume(AudioManager.STREAM_SYSTEM, volume, AudioManager.FLAG_PLAY_SOUND);	
@@ -98,7 +150,7 @@ public class SystemSounds extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		
+
 		audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		systemBar = (SeekBar) findViewById(R.id.systemVolume);
 		alarmBar = (SeekBar) findViewById(R.id.alarmVolume);
@@ -106,11 +158,17 @@ public class SystemSounds extends Activity {
 		notificationsBar = (SeekBar) findViewById(R.id.notificationsVolume);
 		ringerBar = (SeekBar) findViewById(R.id.ringerVolume);
 		mediaBar = (SeekBar) findViewById(R.id.mediaVolume);
+		layout = (LinearLayout) findViewById(R.id.layout);	
 		final ToggleButton toggle = (ToggleButton) findViewById(R.id.toggleButton1);
 		final Button button = (Button) findViewById(R.id.profileButton);
-
+	
 		updateStatusBars();
-
+		
+		if (!madeProperties) {
+			createProperty();
+			madeProperties = true;
+		}
+		
 		toggle.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton arg0, boolean on) {
@@ -138,7 +196,7 @@ public class SystemSounds extends Activity {
 		init(ringerBar);
 		init(mediaBar);
 	}
-	
+
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		switch (keyCode) {    
 		case KeyEvent.KEYCODE_VOLUME_DOWN: {

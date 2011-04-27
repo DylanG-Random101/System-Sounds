@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+	android:layout_width="match_parent" android:layout_height="match_parent"
+	android:orientation="vertical" android:id="@+id/vlayout">
 	<TextView android:layout_width="wrap_content"
 		android:layout_height="wrap_content" android:text="Profiles!"
 		android:id="@+id/checkedTextView1" android:layout_gravity="center_horizontal"></TextView>
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="match_parent" android:layout_height="match_parent"
-		android:gravity="center_horizontal" android:orientation="horizontal" android:layout_marginTop="10px">
-		<Button android:text="Loud" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:id="@+id/loudButton" android:layout_height="wrap_content"></Button>
-		<Button android:text="Silent" android:layout_width="wrap_content"
-			android:id="@+id/silentButton" android:layout_height="wrap_content"
+	<LinearLayout android:orientation="horizontal"
+		android:layout_height="wrap_content" android:id="@+id/layout"
+		android:gravity="center_horizontal" android:layout_width="wrap_content"
+		android:layout_marginTop="10px" android:layout_gravity="center_horizontal">
+		<Button android:id="@+id/loudButton" android:layout_width="wrap_content"
+			android:text="Loud" android:layout_height="wrap_content"
 			android:layout_gravity="center_horizontal"></Button>
+		<Button android:id="@+id/silentButton" android:layout_width="wrap_content"
+			android:text="Silent" android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"></Button>
+		<Button android:id="@+id/createButton" android:layout_width="wrap_content"
+			android:text="Create A Profile!" android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"></Button>
+	</LinearLayout>
+	<TextView android:id="@+id/textView2" android:layout_width="wrap_content"
+		android:layout_gravity="center" android:text="Custom Profiles!"
+		android:layout_height="wrap_content"></TextView>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:gravity="center_horizontal" android:orientation="vertical"
+		android:id="@+id/layout2">	
 	</LinearLayout>
 </LinearLayout>
