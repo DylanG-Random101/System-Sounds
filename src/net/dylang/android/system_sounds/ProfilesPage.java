@@ -27,17 +27,18 @@ public class ProfilesPage extends Activity {
 
 		if (SystemSounds.madeProperties) {
 			profileNames = SystemSounds.prop.getProperty("profile-names").split(",");
-			for (ProfilesPage.i = 0; ProfilesPage.i <= (profileNames.length - 1); ProfilesPage.i++) {
+			for (int i = 0; i < profileNames.length; i++) {
 				LinearLayout layout = (LinearLayout) findViewById(R.id.layout2);	
 				if (!profileNames[i].equals("") && !profileNames[i].equals(" ")) {
 					Button button = new Button(this);
 					button.setText(profileNames[i].replaceAll("-", " "));
 					button.setLayoutParams(new LayoutParams( ViewGroup.LayoutParams.WRAP_CONTENT,
-							ViewGroup.LayoutParams.WRAP_CONTENT)); 
+							ViewGroup.LayoutParams.WRAP_CONTENT));
+					final int j = i;
 					button.setOnClickListener(new OnClickListener() {
 						@Override
 						public void onClick(View v) {
-							String[] volumes = SystemSounds.prop.getProperty(ProfilesPage.profileNames[ProfilesPage.i-1]).split(",");
+							String[] volumes = SystemSounds.prop.getProperty(ProfilesPage.profileNames[j]).split(",");
 							SystemSounds.setIndividualStreamVolume(AudioManager.STREAM_SYSTEM, Integer.parseInt(volumes[0]));
 							SystemSounds.setIndividualStreamVolume(AudioManager.STREAM_ALARM, Integer.parseInt(volumes[1]));
 							SystemSounds.setIndividualStreamVolume(AudioManager.STREAM_VOICE_CALL, Integer.parseInt(volumes[2]));
@@ -45,10 +46,19 @@ public class ProfilesPage extends Activity {
 							SystemSounds.setIndividualStreamVolume(AudioManager.STREAM_RING, Integer.parseInt(volumes[4]));
 							SystemSounds.setIndividualStreamVolume(AudioManager.STREAM_MUSIC, Integer.parseInt(volumes[5]));
 							SystemSounds.updateStatusBars();
-							Toast.makeText(ProfilesPage.this, "Your volumes have been set to '" + ProfilesPage.profileNames[ProfilesPage.i-1].replaceAll("-", " ") + "'.", Toast.LENGTH_SHORT).show();
+							Toast.makeText(ProfilesPage.this, "Your volumes have been set to '" + ProfilesPage.profileNames[j].replaceAll("-", " ") + "'.", Toast.LENGTH_SHORT).show();
 							ProfilesPage.this.startActivity(systemSounds);
 						}
 					});
+					/*
+					button.setOnLongClickListener(new OnLongClickListener() {
+						@Override
+						public boolean onLongClick(View arg0) {
+							// TODO Auto-generated method stub
+							return false;
+						}
+					});
+					 */
 					button.setGravity(Gravity.CENTER_HORIZONTAL);
 					layout.addView(button);
 				}
